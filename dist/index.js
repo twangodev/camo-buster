@@ -63671,7 +63671,7 @@ async function run() {
         if (urls.length === 0) {
             core.info('No camo URLs found — nothing to purge.');
             await core.summary
-                .addHeading('Camo Buster', 2)
+                .addHeading('camo-buster', 2)
                 .addRaw('No camo URLs found. Nothing to purge.', true)
                 .write();
             core.setOutput('purged-count', 0);
@@ -63696,7 +63696,7 @@ async function run() {
         const headline = `Purged ${successes.length}/${urls.length} camo URL(s)${failures.length ? ` (${failures.length} failed)` : ''} in ${elapsedMs} ms`;
         core.info(headline);
         await core.summary
-            .addHeading('Camo Buster', 2)
+            .addHeading('camo-buster', 2)
             .addRaw(`Purged **${successes.length}** of **${urls.length}** camo URL(s)${failures.length ? ` — **${failures.length} failed**` : ''} in **${elapsedMs} ms**.`, true)
             .addTable([
             [

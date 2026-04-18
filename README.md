@@ -1,7 +1,7 @@
-# Camo Buster
+# camo-buster
 
 [![CI](https://github.com/twangodev/camo-buster/actions/workflows/main.yml/badge.svg)](https://github.com/twangodev/camo-buster/actions/workflows/main.yml)
-[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-Camo%20Buster-blue?logo=github)](https://github.com/marketplace/actions/camo-buster)
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-camo--buster-blue?logo=github)](https://github.com/marketplace/actions/camo-buster)
 [![Release](https://img.shields.io/github/v/release/twangodev/camo-buster?display_name=tag&sort=semver)](https://github.com/twangodev/camo-buster/releases)
 [![License](https://img.shields.io/github/license/twangodev/camo-buster)](./LICENSE)
 
