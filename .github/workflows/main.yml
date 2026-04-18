@@ -40,3 +40,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: googleapis/release-please-action@v4
+        id: release
+
+      - uses: actions/checkout@v4
+        if: ${{ steps.release.outputs.release_created }}
+
+      - uses: haya14busa/action-update-semver@v1
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          tag: ${{ steps.release.outputs.tag_name }}
+          major_version_tag_only: true
