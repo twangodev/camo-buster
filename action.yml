@@ -1,0 +1,42 @@
+name: 'Camo Buster'
+description: 'Bust GitHub camo image caches so README and markdown image updates show instantly.'
+author: 'James Ding'
+branding:
+  icon: 'zap'
+  color: 'blue'
+
+inputs:
+  files:
+    description: 'Newline- or comma-separated globs of markdown files to scan for images. Leave empty to skip file scanning.'
+    required: false
+    default: 'README.md'
+  urls:
+    description: 'Newline- or comma-separated list of original (pre-camo) image URLs to purge. These are rendered through the GitHub markdown API to discover their camo URLs.'
+    required: false
+    default: ''
+  repository:
+    description: 'owner/repo used as the rendering context for the GitHub markdown API.'
+    required: false
+    default: ${{ github.repository }}
+  github-token:
+    description: 'GitHub token used to call the markdown render API. The default workflow token is sufficient.'
+    required: false
+    default: ${{ github.token }}
+  fail-on-error:
+    description: 'Fail the step if any PURGE request returns a non-2xx response.'
+    required: false
+    default: 'false'
+  concurrency:
+    description: 'Maximum number of concurrent PURGE requests.'
+    required: false
+    default: '4'
+
+outputs:
+  purged-count:
+    description: 'Number of camo URLs successfully purged.'
+  purged-urls:
+    description: 'JSON array of camo URLs that were purged.'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

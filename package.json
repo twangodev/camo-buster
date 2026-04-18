@@ -1,0 +1,27 @@
+{
+  "name": "camo-buster",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "James Ding",
+  "scripts": {
+    "build": "ncc build src/main.ts -o dist --source-map --license licenses.txt",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "all": "npm run format:check && npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "@actions/glob": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "@vercel/ncc": "^0.38.1",
+    "prettier": "3.8.3",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0"
+  }
+}
