@@ -1,4 +1,4 @@
-name: 'Camo Buster'
+name: 'camo-buster'
 description: 'Bust GitHub camo image caches so README and markdown image updates show instantly.'
 author: 'James Ding'
 branding:
